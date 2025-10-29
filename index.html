@@ -151,8 +151,8 @@
         }
         pre{
             display: block;
-            margin: auto;
-            width: auto;
+            margin: 20px auto;
+            max-width: auto;
             white-space: pre-wrap;
             line-height: 1.8em;
             background-color: rgb(174, 189, 204);
@@ -396,42 +396,42 @@ padding: 10px;
 <br>
 <pre>
 &lt;script&gt;
-        const itens = document.getElementById('itens');
+const itens = document.getElementById('itens');
 
-        function clickMenu() {
-            if (itens.style.display == 'block') {
-                itens.style.display = 'none';
-            } else {
-                itens.style.display = 'block';
-            }
-        }
-        
-        // Fecha o menu automaticamente ao clicar em um link
-        const links = document.querySelectorAll('#itens a');
-        links.forEach(link => {
-            link.addEventListener('click', () =&gt; {
-                // Apenas fecha se estiver em tela menor que 768px (Mobile)
-                if (window.innerWidth &lt; 768) { 
-                    itens.style.display = 'none';
-                }
-            });
-        });
+function clickMenu() {
+if (itens.style.display == 'block') {
+itens.style.display = 'none';
+} else {
+itens.style.display = 'block';
+}
+}
 
-        function mudouTamanho() {
-            if (window.innerWidth >= 768) {
-                // Desktop: sempre mostra o menu
-                itens.style.display = 'block';
-            } else {
+// Fecha o menu automaticamente ao clicar em um link
+const links = document.querySelectorAll('#itens a');
+links.forEach(link => {
+link.addEventListener('click', () =&gt; {
+// Apenas fecha se estiver em tela menor que 768px (Mobile)
+if (window.innerWidth &lt; 768) { 
+    itens.style.display = 'none';
+}
+});
+});
+
+function mudouTamanho() {
+if (window.innerWidth >= 768) {
+// Desktop: sempre mostra o menu
+itens.style.display = 'block';
+} else {
 <strong>// Mobile: esconde o menu (deixa apenas o botão)</strong>
-                itens.style.display = 'none';
-            }
-        }
+itens.style.display = 'none';
+}
+}
 
 <strong>
 // Garante que a função seja chamada na primeira carga para definir o estado inicial
 mudouTamanho();
 </strong>
-    &lt;/script&gt;
+&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 <p id="paragrafo" style="height: 100vh;"><em>Navegue pelo menu...</em></p>
